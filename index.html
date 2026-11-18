@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>StudyShelf</title>
+  <meta name="description" content="Sua estante de PDFs de estudo, com marcador de página e conversor de arquivos. Tudo fica salvo no seu aparelho." />
+
+  <!-- Tema: "light dark" segue o sistema; "light"/"dark" é uma escolha manual salva -->
+  <meta name="color-scheme" content="light dark" />
+  <script>
+    try {
+      var t = (localStorage.getItem('studyshelf:theme') || '').replace(/"/g, '');
+      if (t === 'light' || t === 'dark') document.querySelector('meta[name="color-scheme"]').content = t;
+    } catch (e) {}
+  </script>
+  <meta name="theme-color" content="#f3f5f8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#131821" media="(prefers-color-scheme: dark)" />
+
+  <!-- App instalável: Android/Chrome usam o manifest; o iPhone usa as metas apple-* -->
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="StudyShelf" />
+
+  <link rel="stylesheet" href="./app-7UPM2HDX.css" />
+  <script src="./vendor/pdf.min.js" integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e"></script>
+  <script defer src="./app-6IKM2NWP.js" integrity="sha384-nUX36TPGMkQxZsL33Og14vSdNWWsE5uuRBG5/iLnFgldMAkEzARtbiKJjSh9RJXN"></script>
+</head>
+<body class="bg-paper text-ink font-sans">
+  <div id="root">
+    <div style="display:flex;height:100vh;align-items:center;justify-content:center;font-family:system-ui;color:#586275">Abrindo a estante…</div>
+  </div>
+  <noscript>Este aplicativo precisa de JavaScript habilitado.</noscript>
+  <p class="sr-only">Avisos para leitores de tela</p>
+  <div id="sr-live" class="sr-only" aria-live="polite"></div>
+</body>
+</html>

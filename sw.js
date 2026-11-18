@@ -1,7 +1,7 @@
 /* Service worker do StudyShelf: deixa o app funcionando sem internet.
    Todos os arquivos do app são guardados no primeiro acesso; os PDFs da pessoa
    ficam no IndexedDB (não passam por aqui). A versão e a lista de arquivos vêm do build. */
-const VERSION = 'e182551788';
+const VERSION = 'e182551788-mwlks3bi';
 const PRECACHE = [
  "./",
  "./app-6IKM2NWP.js",

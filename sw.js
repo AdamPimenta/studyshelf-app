@@ -1,7 +1,7 @@
 /* Service worker do StudyShelf: deixa o app funcionando sem internet.
    Todos os arquivos do app são guardados no primeiro acesso; os PDFs da pessoa
    ficam no IndexedDB (não passam por aqui). A versão e a lista de arquivos vêm do build. */
-const VERSION = 'e182551788-mwlks3bi';
+const VERSION = 'e182551788-mwlkulv8';
 const PRECACHE = [
  "./",
  "./app-6IKM2NWP.js",
@@ -45,7 +45,10 @@ const CACHE = 'studyshelf-' + VERSION;
 const SHARED = 'studyshelf-shared';
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)));
+  // cache: 'reload' busca direto no servidor: sem isso, uma versão nova poderia guardar
+  // arquivos antigos que ainda estavam no cache comum do navegador
+  event.waitUntil(caches.open(CACHE).then((cache) =>
+    cache.addAll(PRECACHE.map((url) => new Request(url, { cache: 'reload' })))));
 });
 
 self.addEventListener('activate', (event) => {

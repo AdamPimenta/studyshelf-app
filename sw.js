@@ -1,11 +1,11 @@
 /* Service worker do StudyShelf: deixa o app funcionando sem internet.
    Todos os arquivos do app são guardados no primeiro acesso; os PDFs da pessoa
    ficam no IndexedDB (não passam por aqui). A versão e a lista de arquivos vêm do build. */
-const VERSION = 'ac783f3369-mwmwbunx';
+const VERSION = 'b6672cf77c-mwmx5d0b';
 const PRECACHE = [
  "./",
- "./app-GWA2ANZY.css",
- "./app-L4X5JRO5.js",
+ "./app-7KA34Y4D.css",
+ "./app-ZPOD7TG3.js",
  "./fonts/atkinson-hyperlegible-next-latin-400-normal-T2TIKS3B.woff",
  "./fonts/atkinson-hyperlegible-next-latin-400-normal-XD2DM5SQ.woff2",
  "./fonts/atkinson-hyperlegible-next-latin-500-normal-HSKVGJQV.woff2",

@@ -1,7 +1,7 @@
 /* Service worker do Minha Estante Virtual: deixa o app funcionando sem internet.
    Todos os arquivos do app são guardados no primeiro acesso; os PDFs da pessoa
    ficam no IndexedDB (não passam por aqui). A versão e a lista de arquivos vêm do build. */
-const VERSION = 'baca1a65ca-mwqqfrbg';
+const VERSION = '93bb9c56d3-mwqqpfjg';
 const PRECACHE = [
  "./",
  "./app-7KA34Y4D.css",
@@ -30,6 +30,7 @@ const PRECACHE = [
  "./icons/icon-maskable-512.png",
  "./index.html",
  "./manifest.webmanifest",
+ "./privacidade.html",
  "./vendor/html-to-pdfmake.js",
  "./vendor/jszip.min.js",
  "./vendor/mammoth.browser.min.js",
@@ -76,8 +77,13 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
 
   // Navegação: sempre a página do app guardada (funciona offline)
+  // (páginas próprias, como a política de privacidade, vêm do cache com o próprio endereço)
   if (event.request.mode === 'navigate') {
-    event.respondWith(caches.match('./index.html').then((r) => r || fetch(event.request)));
+    event.respondWith(
+      caches.match(event.request, { ignoreSearch: true })
+        .then((r) => r || caches.match('./index.html'))
+        .then((r) => r || fetch(event.request)),
+    );
     return;
   }
   event.respondWith(caches.match(event.request, { ignoreSearch: true }).then((r) => r || fetch(event.request)));

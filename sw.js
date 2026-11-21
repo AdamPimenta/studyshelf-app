@@ -1,11 +1,11 @@
-/* Service worker do StudyShelf: deixa o app funcionando sem internet.
+/* Service worker do Minha Estante Virtual: deixa o app funcionando sem internet.
    Todos os arquivos do app são guardados no primeiro acesso; os PDFs da pessoa
    ficam no IndexedDB (não passam por aqui). A versão e a lista de arquivos vêm do build. */
-const VERSION = 'b6672cf77c-mwmx5d0b';
+const VERSION = 'baca1a65ca-mwqqfrbg';
 const PRECACHE = [
  "./",
  "./app-7KA34Y4D.css",
- "./app-ZPOD7TG3.js",
+ "./app-T3IUHYE5.js",
  "./fonts/atkinson-hyperlegible-next-latin-400-normal-T2TIKS3B.woff",
  "./fonts/atkinson-hyperlegible-next-latin-400-normal-XD2DM5SQ.woff2",
  "./fonts/atkinson-hyperlegible-next-latin-500-normal-HSKVGJQV.woff2",
@@ -68,7 +68,7 @@ self.addEventListener('message', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // "Compartilhar → StudyShelf" no Android: guarda os arquivos e abre o app
+  // "Compartilhar → Minha Estante" no Android: guarda os arquivos e abre o app
   if (event.request.method === 'POST' && url.pathname.endsWith('/share-target')) {
     event.respondWith(receiveShare(event.request));
     return;

@@ -1,5 +1,5 @@
-# StudyShelf (app)
+# Minha Estante Virtual (app)
 
-Arquivos prontos do app StudyShelf, publicados pelo GitHub Pages.
-Abra o link do Pages no celular: no iPhone, Safari > Compartilhar > Adicionar a Tela de Inicio; no Android, Chrome > Instalar app.
+Arquivos prontos do app Minha Estante Virtual, publicados pelo GitHub Pages.
+No iPhone: Safari > Compartilhar > Adicionar a Tela de Inicio. No Android: Chrome > Instalar app, ou baixe o APK em Releases.
 Os PDFs e dados de quem usa ficam somente no aparelho.

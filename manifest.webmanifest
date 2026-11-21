@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "StudyShelf: estante de estudos",
-  "short_name": "StudyShelf",
+  "name": "Minha Estante Virtual",
+  "short_name": "Minha Estante",
   "description": "Sua estante de PDFs de estudo, com marcador de página e conversor de arquivos. Tudo fica salvo no seu aparelho.",
   "lang": "pt-BR",
   "start_url": "./",

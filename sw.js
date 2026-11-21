@@ -1,11 +1,11 @@
 /* Service worker do Minha Estante Virtual: deixa o app funcionando sem internet.
    Todos os arquivos do app são guardados no primeiro acesso; os PDFs da pessoa
    ficam no IndexedDB (não passam por aqui). A versão e a lista de arquivos vêm do build. */
-const VERSION = '728a7e00d5-mwqqwgwn';
+const VERSION = '0044d73baa-mwqsmhl7';
 const PRECACHE = [
  "./",
  "./app-36KWJ6EQ.css",
- "./app-5PGOXC2C.js",
+ "./app-CLQP3YPC.js",
  "./fonts/atkinson-hyperlegible-next-latin-400-normal-T2TIKS3B.woff",
  "./fonts/atkinson-hyperlegible-next-latin-400-normal-XD2DM5SQ.woff2",
  "./fonts/atkinson-hyperlegible-next-latin-500-normal-HSKVGJQV.woff2",
